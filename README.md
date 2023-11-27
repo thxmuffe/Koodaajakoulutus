@@ -34,3 +34,11 @@ Kontrolleri kannattaa tehdä käsin, mutta voit myös aluksi tehdä sen automaat
 dotnet aspnet-codegenerator --project . controller -name YOUR_CONTROLLER_NAME -m YOUR_MODEL_NAME -dc YOUR_DB_CONTEXT_CLASS -outDir Controllers/
 
 esim: dotnet aspnet-codegenerator --project . controller -name PersonsController -m Person -dc FreeAzureSqlContext -outDir Controllers/
+
+Tällä tavalla teki sellaisen kontrollerin, joka olisi vaatinut jotain lisäosia. En pystynyt ratkaisemaan sitä, joten ten sen samalla tavalla kuin WeatherController, joka toimii, eli esim:
+// GET: Persons
+        [HttpGet(Name = "GetPersons")]
+        public IEnumerable<Person> Get()
+        {
+              return _context.Persons.ToArray();
+        }

@@ -22,11 +22,9 @@ namespace WebAPI.Controllers
 
         // GET: Persons
         [HttpGet(Name = "GetPersons")]
-        public async Task<IActionResult> Index()
+        public IEnumerable<Person> Get()
         {
-              return _context.Persons != null ? 
-                          View(await _context.Persons.ToListAsync()) :
-                          Problem("Entity set 'FreeAzureSqlContext.Persons'  is null.");
+              return _context.Persons.ToArray();
         }
 
         // GET: Persons/Details/5
