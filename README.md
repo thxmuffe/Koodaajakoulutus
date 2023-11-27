@@ -7,7 +7,6 @@ Azure SQL server:
 - Huom Azure Data Studiolla kytkeydytään tietokannan SQL-login tunnuksilla.
 
 
-
 Voit tehdä "New query" napilla uuden taulun omaan tietokantaasi, esimerkkinä
 
 CREATE TABLE Persons (
@@ -16,3 +15,11 @@ CREATE TABLE Persons (
     FirstName varchar(255),
     Age int
 );
+
+
+
+WebAPI:
+kts. https://learn.microsoft.com/en-us/ef/core/cli/dotnet
+Tee EF-model aiemman osan tietokannasta.
+ConnectionString:n saa kopioitua Azuresta, ja voit sen jälkeen luoda mallin:
+dotnet ef dbcontext scaffold komennolla.
