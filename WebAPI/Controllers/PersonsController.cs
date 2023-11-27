@@ -9,6 +9,8 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class PersonsController : Controller
     {
         private readonly FreeAzureSqlContext _context;
@@ -19,6 +21,7 @@ namespace WebAPI.Controllers
         }
 
         // GET: Persons
+        [HttpGet(Name = "GetPersons")]
         public async Task<IActionResult> Index()
         {
               return _context.Persons != null ? 

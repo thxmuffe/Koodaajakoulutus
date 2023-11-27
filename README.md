@@ -16,7 +16,8 @@ CREATE TABLE Persons (
     Age int
 );
 
-
+Voit lisätä rivejä esim. INSERT INTO [dbo].[Persons] (LastName,FirstName,Age)
+VALUES ('Penttilä', 'Paavo', 44);
 
 WebAPI:
 Voit yksinkertaistaa launch-settings tiedostoa, jättää ainoastaan https-version, jolloin vähemmän epäselvyttää mikä profiili käytössä. Voit testata WeatherController contolleria esim: https://localhost:7183/WeatherForecast
