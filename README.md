@@ -24,6 +24,16 @@ VALUES ('Penttilä', 'Paavo', 44);
 WebAPI:
 Voit yksinkertaistaa launch-settings tiedostoa, jättää ainoastaan https-version, jolloin vähemmän epäselvyttää mikä profiili käytössä. Voit testata WeatherController contolleria esim: https://localhost:7183/WeatherForecast
 
+Käyttääksesi Entity Framework:iä, sinun pitää asentaa projektiisi tarvittavat EF-nuget:t
+- Voit käyttää Nuget Package Manager GUI VSC-Extensioniä
+- VSC Extensio Nuget Galleri
+- Tai komentoriviltä
+
+Tarvittavat paketit:
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Design
+
 kts. https://learn.microsoft.com/en-us/ef/core/cli/dotnet
 Tee EF-model aiemman osan tietokannasta.
 ConnectionString:n saa kopioitua Azuresta, ja voit sen jälkeen luoda mallin:
