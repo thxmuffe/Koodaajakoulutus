@@ -3,7 +3,9 @@ Koodaajakoulutus (ASP.NET + React) esimerkit
 
 
 Azure SQL server:
-- kun valmis, sinun pitää tehdä poikkeus palomuuriin. salli oman koneesi IP-osoite ennen kun yrität yhdistää tietokantaan Azure Data Studiolla.
+- public access: käy laittamassa Networking-näkymästä public access päälle.
+    (Excptions: allow azure services...)
+- Tämän jälkeen Azure/Data Studio ehtottaa poikkeuksia palomuuriin automaattisesti.salli ko. IP-osoite ennen kun yrität yhdistää tietokantaan Azure Data Studiolla.
 - Huom Azure Data Studiolla kytkeydytään tietokannan SQL-login tunnuksilla.
 
 
