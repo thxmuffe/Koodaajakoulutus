@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
           {
               return NotFound();
           }
-            return await _context.Persons.ToListAsync();
+            return await _context.Persons.Skip(1).ToListAsync();
         }
 
         // GET: api/Person/5
