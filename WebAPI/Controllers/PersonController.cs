@@ -9,6 +9,8 @@ using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class PersonController : Controller
     {
         private readonly FreeAzureSqlContext _context;
@@ -19,11 +21,17 @@ namespace WebAPI.Controllers
         }
 
         // GET: Person
-        public async Task<IActionResult> Index()
+        [HttpGet(Name = "GetPersons")]
+        public IEnumerable<Person> Indexxx()
         {
-              return _context.Persons != null ? 
-                          View(await _context.Persons.ToListAsync()) :
-                          Problem("Entity set 'FreeAzureSqlContext.Persons'  is null.");
+            // Fetch all persons from database
+            Person[] allPeople = _context.Persons.ToArray();
+
+            return allPeople;
+
+            //  return _context.Persons != null ? 
+            //              View(await _context.Persons.ToListAsync()) :
+            //              Problem("Entity set 'FreeAzureSqlContext.Persons'  is null.");
         }
 
         // GET: Person/Details/5

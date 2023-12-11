@@ -57,3 +57,17 @@ Tällä tavalla teki sellaisen kontrollerin, joka olisi vaatinut jotain lisäosi
         {
               return _context.Persons.ToArray();
         }
+
+o	Pitää laittaa kontrollerille:
+	    [apicontroller] 
+    	[Route("[controller]")]
+o	Get-Metodille metodi-attribuutit
+	    [HttpGet(Name = "GetPersons")]
+
+Huom, joutunet myös muokkaamaan Progra.cs:ää
+- Vähintään: builder.Services.AddDbContext<FreeAzureSqlContext>();
+- builder.Services.AddControllers();
+- optionally: builder.Services.AddControllersWithViews();
+
+Lisäksi Get/index-metodia, joutuu muokkaamaan..
+
