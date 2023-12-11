@@ -46,7 +46,7 @@ Kun sinulla on EF-malli luoto, lisää uusi kontroller ohjelmaasi, joka talletta
 
 Kontrolleri kannattaa tehdä käsin, mutta voit myös aluksi tehdä sen automaattisesti komentoriviltä, jolloin näet millainen siitä pitäisi tulla. kts. https://learn.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-8.0
 
-dotnet aspnet-codegenerator --project . controller -name YOUR_CONTROLLER_NAME -m YOUR_MODEL_NAME -dc YOUR_DB_CONTEXT_CLASS -outDir Controllers/
+dotnet aspnet-codegenerator --project . controller -api -name YOUR_CONTROLLER_NAME -m YOUR_MODEL_NAME -dc YOUR_DB_CONTEXT_CLASS -outDir Controllers/
 
 esim: dotnet aspnet-codegenerator --project . controller -name PersonsController -m Person -dc FreeAzureSqlContext -outDir Controllers/
 
