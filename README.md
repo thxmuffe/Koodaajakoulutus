@@ -34,8 +34,11 @@ Microsoft.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Design
 
+salasana esim. Str#ng_Passw#rd
+
 kts. https://learn.microsoft.com/en-us/ef/core/cli/dotnet
-Tee EF-model aiemman osan tietokannasta.
+Tee EF-model aiemman osan tietokannasta esim:
+     dotnet ef dbcontext scaffolding "<connectiomString>" adapteri -o <outputkansio>
 ConnectionString:n saa kopioitua Azuresta, ja voit sen jälkeen luoda mallin:
 dotnet ef dbcontext scaffold komennolla.
 
