@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace WebAPI.Models;
 
@@ -13,13 +11,12 @@ public partial class FreeAzureSqlContext : DbContext
     public FreeAzureSqlContext(DbContextOptions<FreeAzureSqlContext> options)
         : base(options)
     {
-        System.Console.WriteLine("In constructor line 16");
+        Console.WriteLine("In constructor line 16");
     }
 
     public virtual DbSet<Person> Persons { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-        System.Console.WriteLine("In OnConfiguring line 22");
 
         #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
 

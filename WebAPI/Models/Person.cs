@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WebAPI.Models;
+﻿namespace WebAPI.Models;
 
 public partial class Person
 {
