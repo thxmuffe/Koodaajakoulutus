@@ -33,6 +33,7 @@ Tarvittavat paketit:
 Microsoft.EntityFrameworkCore
 Microsoft.EntityFrameworkCore.SqlServer
 Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Tools
 
 salasana esim. Str#ng_Passw#rd
 
@@ -71,3 +72,5 @@ Huom, joutunet myös muokkaamaan Progra.cs:ää
 
 Lisäksi Get/index-metodia, joutuu muokkaamaan..
 
+
+Kun luot Azuree web_appia, deployment osuuden voi määritellä joko heti luontivaiheessa, tai myöhemmin (Deployment Center)
