@@ -13,13 +13,20 @@ public partial class FreeAzureSqlContext : DbContext
     public FreeAzureSqlContext(DbContextOptions<FreeAzureSqlContext> options)
         : base(options)
     {
+        System.Console.WriteLine("In constructor line 16");
     }
 
     public virtual DbSet<Person> Persons { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=tcp:koodaajakoulutus.database.windows.net,1433;Initial Catalog=FreeAzureSQL;Persist Security Info=False;User ID=paavo;Password=Str#ng_Passw#rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+        System.Console.WriteLine("In OnConfiguring line 22");
+
+        #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+
+        optionsBuilder.UseSqlServer("Server=tcp:koodaajakoulutus.database.windows.net,1433;Initial Catalog=FreeAzureSQL;Persist Security Info=False;User ID=paavo;Password=Str#ng_Passw#rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        
+    }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

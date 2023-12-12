@@ -65,12 +65,17 @@ o	Pitää laittaa kontrollerille:
 o	Get-Metodille metodi-attribuutit
 	    [HttpGet(Name = "GetPersons")]
 
-Huom, joutunet myös muokkaamaan Progra.cs:ää
-- Vähintään: builder.Services.AddDbContext<FreeAzureSqlContext>();
-- builder.Services.AddControllers();
-- optionally: builder.Services.AddControllersWithViews();
+Joudut myös lisäämään Program.cs:n alkuun kytkennät mm. tietokannan ja kontrollerin välille.
 
-Lisäksi Get/index-metodia, joutuu muokkaamaan..
+builder.Services.AddDbContext<FreeAzureSqlContext>();
+Selitys: Kun tullaan kontrollerin esim. get-persons metodiin, ASP.NET framework kutsuu silloin db-kontekstin initialisointia ja yhdistään DbContext luokan aitoon tietokantaan (käyttäen haluttua tietokantayhteyttä / connectionString). Jos AddDbContext() kutsu puuttuu Programista, framework ei pysty yhdistämään kontrolleria oikeaan tietokantaan.
+
+
+Lisäksi:
+- builder.Services.AddControllers();
+
+Ja jos käytät Razor pages / views, niin:
+- optionally: builder.Services.AddControllersWithViews();
 
 
 Kun luot Azuree web_appia, deployment osuuden voi määritellä joko heti luontivaiheessa, tai myöhemmin (Deployment Center)
